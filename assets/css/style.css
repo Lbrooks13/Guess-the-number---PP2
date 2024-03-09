@@ -1,0 +1,73 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-family: sans-serif;
+}
+
+.guess-the-number {
+    height: 22em;
+    min-width: 21em;
+    border-radius: 5px;
+    background: rgba(189, 227, 253, 0.63);
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+}
+
+.title {
+    padding: 15px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.rule {
+    text-align: center;
+    padding: 3em;
+}
+
+.hint, .remaining, .result, .all-guesses {
+    text-align: center;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input {
+    width: 25%;
+    height: 1.8em;
+    text-align: center;
+    font-size: 1.4em;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button {
+    width: 25%;
+    color: white;
+    font-size: 1.4em;
+    background: rgb(4, 186, 247);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
