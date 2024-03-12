@@ -8,6 +8,7 @@
     
 </head>
 <body>
+    
     <div class="guess-the-number">
         <header class="rule">Guess the number between</h1>
         <span class="min">1</span>
@@ -16,8 +17,12 @@
         </header>
         <p class="hint"></p>
         <div class="actions">
-            <input type="text" class="guess"/>
+            <input type="text" class="guess" required>
+        </div>
+        <div class="actions">
+            
             <button class="submit">Check</button>
+            <button hidden class="reset">Try Again</button>
         </div>
 
         <p class="remaining">
@@ -33,6 +38,12 @@
 
 
     </div>
+
+    <div class="leader">
+        <h2>Last tries</h2>
+        <p class="tries-last"></p>
+    </div>
+
     
     <script src="assets/js/script.js"></script>
 </body>
