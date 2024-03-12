@@ -7,17 +7,12 @@ function getRandomInt(min, max) {
   }
   
 
-
-
 document.addEventListener("DOMContentLoaded", (e) => {
     value = getRandomInt(1, 100);
     console.log(value);
 })
 
-console.log(value);
-
 let nbGuess = 5;
-
 
 const button = document.querySelector(".submit");
 const input = document.querySelector(".guess");
@@ -37,12 +32,11 @@ const allguesses = document.querySelector(".all");
         input.value = "";
     }
 
-
    
     button.addEventListener("click", (e) => {
         e.preventDefault();
 
-        const guess = parseInt (input.value, 10);
+        const guess = parseInt(input.value, 10);
 
         if (nbGuess !== 1 && guess !== value) { 
             updateHint(guess, value);
@@ -58,6 +52,5 @@ const allguesses = document.querySelector(".all");
         
         nbGuess--;
         remVal.textContent = nbGuess;
-        //allguesses.textContent += `${guess ? guess = ", " : ""};
         allguesses.textContent += guess + ", ";
     })
