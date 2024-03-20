@@ -34,7 +34,7 @@ checkButton.addEventListener("click", (e) => {
     result.textContent ="";
 
     if (!input.value) {
-        result.textContent = "Please enter a number.";
+        result.textContent = alert("Please enter a number.");
         return;
     
     }
@@ -45,12 +45,12 @@ checkButton.addEventListener("click", (e) => {
         updateHint(guess, value);
     }
     else if (nbGuess ===1 && guess !== value) {
-        result.textContent = "Better luck next time!";
+        result.textContent = alert("Better luck next time!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
     }
     else if (guess === value) {
-        result.textContent = "Well done, mate."
+        result.textContent = alert("Well done, mate.");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
         updateScores(5 - nbGuess);

@@ -9,7 +9,7 @@ body {
 }
 
 .guess-the-number {
-    height: 22em;
+    height: 30em;
     min-width: 21em;
     border-radius: 5px;
     background: rgba(189, 227, 253, 0.63);
@@ -74,7 +74,7 @@ button {
 }
 
 .leader {
-    height: 22em;
+    height: 30em;
     min-width: 21em;
     border-radius: 5px;
     background: rgba(189, 227, 253, 0.63);
@@ -82,4 +82,53 @@ button {
     flex-direction: column;
     gap: 1.3em;
     margin-left: 10px;
+    text-align: center;
+}
+
+.tries-last {
+    display: flex;
+    flex-direction: column;
+}
+
+.leader-top {
+    padding-top: 1.8em;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .leader {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .guess-the-number {
+        width: 90%;
+        text-align: center;
+
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .leader {
+       width: 90%;
+        
+    }
+
+    .guess-the-number {
+        margin-top: 20px;
+    }
 }
