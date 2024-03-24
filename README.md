@@ -1,39 +1,49 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Guess the Number
 
-Welcome,
+Guess the number is a fun guessing game where you try to out-smart the computer. The computer will randomly pick a number between 1 and 100 and it's your job to guess what it's thinking. Don;t worry! It'll help you along the way with hints, and if you're successful you can log your score!
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+![Am i responsive](https://i.ibb.co/Cz46D0t/pp2-responsive-scrnsht.png)
 
-## Codeanywhere Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Features -
+- Number Input - Here the user can input their guess. The app will then log this and move onto the next feature.
+- Hints - The game will log which num,bers you have entered to prevent you from using up a try on an already used number.
+![hint](https://i.ibb.co/bRvYvhJ/pp2-hint.png)
+- Remaining Guesses - The game counts down how many remains tries you have.
+- Duplicate Numbers - The game keeps track of which numbers you have used (as mentioned above) but will also not allow you to enter a duplicate number. If this happens, a pop-up will warn you and the game will not deduct a try from you.
+- Your Score - When you correctly guess the number, the game will log the score for you on the leader-board.
+![score](https://i.ibb.co/sqt5JXR/pp2-score.png)
+![success](https://i.ibb.co/DVVQ5Yh/pp2-sucess.png)
+### Features left to implement -
+test test test
 
-`python3 -m http.server`
+## Testing -
+When going through the testing phase I wanted to ensure the user journey was straightforward, with the user being able to easily use the app and feel that the game responds correctly and efficiently.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+It was essential that the platform was fully responsive so users are able to easily use the application as intended, on any device. The simplistic user interface is fully responsive across Desktop, Laptop and Mobile.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+All information either required or displayed to the user is clear and concise. This allows a variety of people to use the app, regardless of skill level with technology or ability.
 
-`http_server`
+### Bugs -
+test test test
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Validator Testing -
+- HTML : No errors were returned when passing through [W3c Validator](https://validator.w3.org/)
+- CSS : No errors were returned when passing through the official [Jigsaw](https://jigsaw.w3.org/css-validator/)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Deployment - 
+I deployed the site on GitHub using the following procedure:
+- Once on the project repository, click on the settings tab.
+- Select the Pages tab.
+- Then, under the Source section, select the main branch from the drop-down menu and click save.
+- After a few minutes the page was deployed.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The link to the live page is [here](https://lbrooks13.github.io/Guess-the-number---PP2/)
 
-To log into the Heroku toolbelt CLI:
+## Credits
+### Media -
+- This README was constructed using [stackEdit](stackededit.io)
+- Additonal help with Javascript from [Anthony Larner](https://github.come/alarner-rw)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+Also, a huge thank you to my mentor, Luke Buchanan.

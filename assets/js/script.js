@@ -7,16 +7,14 @@ const allguesses = document.querySelector(".all");
 const tryAgainButton = document.querySelector(".reset");
 const triesLast = document.querySelector(".tries-last");
 
-let value;
-let nbGuess = 5;
-let scores = [];
-
-
+let targetNumber;
+let numberOfGuesses = 5;
+let savedScoresArray = [];
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", (e) => {
-    value = getRandomInt(1, 100);
-    console.log(value);
+    targetNumber = getRandomInt(1, 100);
+    console.log(targetNumber);
 })
 
 tryAgainButton.addEventListener("click", (e) => {
@@ -25,8 +23,6 @@ tryAgainButton.addEventListener("click", (e) => {
     tryAgainButton.hidden = true;
     resetGame();
 })
-
-
 
 
 checkButton.addEventListener("click", (e) => {
@@ -41,29 +37,33 @@ checkButton.addEventListener("click", (e) => {
 
     const guess = parseInt(input.value, 10);
 
-    if (nbGuess !== 1 && guess !== value) { 
-        updateHint(guess, value);
+    if (numberOfGuesses !== 1 && guess !== targetNumber) { 
+        updateHint(guess, targetNumber);
     }
-    else if (nbGuess ===1 && guess !== value) {
+    else if (numberOfGuesses ===1 && guess !== targetNumber) {
         result.textContent = alert("Better luck next time!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
     }
-    else if (guess === value) {
-        result.textContent = alert("Well done, mate.");
+    else if (guess === targetNumber) {
+        result.textContent = alert("Awesome! Well done!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
-        updateScores(5 - nbGuess);
+        updateScores(5 - numberOfGuesses);
     }
-    
-    nbGuess--;
-    remVal.textContent = nbGuess;
+        
+    numberOfGuesses--;
+    remVal.textContent = numberOfGuesses;
     allguesses.textContent += guess + ", ";
 })
 
+checkButton.addEventListener("click", (e) => {
 
-
-
+    if (guess > 100) {
+        result.textContent = alert("Please enter a number lower than 100.");
+        return;
+    }
+})
 
 // Functions
 
@@ -73,7 +73,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
   
-
 
 function updateHint(guess, value) {
     if (guess < value) {
@@ -87,20 +86,20 @@ function updateHint(guess, value) {
 
 
 function resetGame() {
-    nbGuess = 5;
+    numberOfGuesses = 5;
     result.textContent = "";
     hint.textContent = "";
     remVal.textContent = "";
-    value = getRandomInt(1, 100);
+    targetNumber = getRandomInt(1, 100);
     allguesses.textContent = "";
     input.value = "";
-    console.log(value);
+    console.log(targetNumber);
 }
 
 function updateScores(score) {
-    scores.push(score);
-    console.log(scores);
-    triesLast.textContent = scores;
+    savedScoresArray.push(score);
+    console.log(savedScoresArray);
+    triesLast.textContent = savedScoresArray;
 
 }
 
