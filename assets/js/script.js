@@ -1,11 +1,11 @@
 const checkButton = document.querySelector(".submit");
-const input = document.querySelector(".guess");
-const hint = document.querySelector(".hint");
-const result = document.querySelector(".result");
-const remVal = document.querySelector(".rem-val");
-const allguesses = document.querySelector(".all");
+const inputElement = document.querySelector(".guess");
+const hintControl = document.querySelector(".hint");
+const resultElement = document.querySelector(".result");
+const remainingValue = document.querySelector(".rem-val");
+const allGuesses = document.querySelector(".all");
 const tryAgainButton = document.querySelector(".reset");
-const triesLast = document.querySelector(".tries-last");
+const triesLast = document.getElementById("leaderboard");
 
 let targetNumber;
 let numberOfGuesses = 5;
@@ -27,43 +27,45 @@ tryAgainButton.addEventListener("click", (e) => {
 
 checkButton.addEventListener("click", (e) => {
     e.preventDefault();
-    result.textContent ="";
+    resultElement.textContent ="";
 
-    if (!input.value) {
-        result.textContent = alert("Please enter a number.");
+    if (!inputElement.value) {
+        alert("Please enter a number.");
         return;
-    
     }
 
-    const guess = parseInt(input.value, 10);
+    if (inputElement.value > 100) {
+        alert("Please enter a number lower than 100.");
+        return;
+    }
+
+    const guess = parseInt(inputElement.value, 10);
+
+    if (allGuesses.textContent.includes(inputElement.value)) {
+        alert("You cannot use the same number twice.")
+        return;
+    }
 
     if (numberOfGuesses !== 1 && guess !== targetNumber) { 
         updateHint(guess, targetNumber);
     }
     else if (numberOfGuesses ===1 && guess !== targetNumber) {
-        result.textContent = alert("Better luck next time!");
+        alert("Better luck next time!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
     }
     else if (guess === targetNumber) {
-        result.textContent = alert("Awesome! Well done!");
+        resultElement.textContent = alert("Awesome! Well done!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
         updateScores(5 - numberOfGuesses);
     }
         
     numberOfGuesses--;
-    remVal.textContent = numberOfGuesses;
-    allguesses.textContent += guess + ", ";
+    remainingValue.textContent = numberOfGuesses;
+    allGuesses.textContent += guess + ", ";
 })
 
-checkButton.addEventListener("click", (e) => {
-
-    if (guess > 100) {
-        result.textContent = alert("Please enter a number lower than 100.");
-        return;
-    }
-})
 
 // Functions
 
@@ -76,37 +78,38 @@ function getRandomInt(min, max) {
 
 function updateHint(guess, value) {
     if (guess < value) {
-        hint.textContent = "Hint : Higher";
+        hintControl.textContent = "Hint : Higher";
     }
     else {
-        hint.textContent = "Hint : Lower";
+        hintControl.textContent = "Hint : Lower";
     }
-    input.value = "";
+    inputElement.value = "";
 }
-
 
 function resetGame() {
     numberOfGuesses = 5;
-    result.textContent = "";
-    hint.textContent = "";
-    remVal.textContent = "";
+    resultElement.textContent = "";
+    hintControl.textContent = "";
+    remainingValue.textContent = "";
     targetNumber = getRandomInt(1, 100);
-    allguesses.textContent = "";
-    input.value = "";
+    allGuesses.textContent = "";
+    inputElement.value = "";
     console.log(targetNumber);
 }
 
 function updateScores(score) {
+
+    if (savedScoresArray.length >= 5) {
+        savedScoresArray.pop();
+    }
+
     savedScoresArray.push(score);
-    console.log(savedScoresArray);
-    triesLast.textContent = savedScoresArray;
+    savedScoresArray.sort((a, b) => a - b);
+    triesLast.innerHTML = '';
 
+    savedScoresArray.forEach(function(item) {       
+        let listItem = document.createElement('li');
+        listItem.textContent = item;
+        triesLast.appendChild(listItem);
+    })
 }
-
-
-
-
-
-
-
-   

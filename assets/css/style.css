@@ -93,6 +93,12 @@ button {
     padding-top: 1.8em;
 }
 
+#leaderboard {
+    list-style-type: none;
+    font-size: 45px;
+    padding-left: 0px;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         width: 95%;

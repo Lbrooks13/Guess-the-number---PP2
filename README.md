@@ -44,6 +44,5 @@ The link to the live page is [here](https://lbrooks13.github.io/Guess-the-number
 ## Credits
 ### Media -
 - This README was constructed using [stackEdit](stackededit.io)
-- Additonal help with Javascript from [Anthony Larner](https://github.come/alarner-rw)
 
 Also, a huge thank you to my mentor, Luke Buchanan.
