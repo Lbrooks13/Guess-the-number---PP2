@@ -15,8 +15,6 @@ Guess the number is a fun guessing game where you try to out-smart the computer.
 - Your Score - When you correctly guess the number, the game will log the score for you on the leader-board.
 ![score](https://i.ibb.co/sqt5JXR/pp2-score.png)
 ![success](https://i.ibb.co/DVVQ5Yh/pp2-sucess.png)
-### Features left to implement -
-test test test
 
 ## Testing -
 When going through the testing phase I wanted to ensure the user journey was straightforward, with the user being able to easily use the app and feel that the game responds correctly and efficiently.
