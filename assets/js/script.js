@@ -41,6 +41,7 @@ checkButton.addEventListener("click", (e) => {
 
     if (inputElement.value <= 0) {
         alert("Please enter a number equal to or higher than 1.");
+        return;
     }
 
     const guess = parseInt(inputElement.value, 10);
