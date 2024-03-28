@@ -1,6 +1,6 @@
 # Guess the Number
 
-Guess the number is a fun guessing game where you try to out-smart the computer. The computer will randomly pick a number between 1 and 100 and it's your job to guess what it's thinking. Don;t worry! It'll help you along the way with hints, and if you're successful you can log your score!
+Guess the number is a fun guessing game where you try to out-smart the computer. The computer will randomly pick a number between 1 and 100 and it's your job to guess what it's thinking. Don't worry! It'll help you along the way with hints, and if you're successful you can log your score!
 
 
 ![Am i responsive](https://i.ibb.co/Cz46D0t/pp2-responsive-scrnsht.png)
@@ -26,7 +26,7 @@ It was essential that the platform was fully responsive so users are able to eas
 All information either required or displayed to the user is clear and concise. This allows a variety of people to use the app, regardless of skill level with technology or ability.
 
 ### Bugs -
-test test test
+The guess input field would allow numbers less than 0 or higher than 100, validation (HTML and JavaScript) has now been added to prevent this from happening and alert the player of this not being allowed.
 
 ### Validator Testing -
 - HTML : No errors were returned when passing through [W3c Validator](https://validator.w3.org/)

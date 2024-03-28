@@ -13,11 +13,14 @@ let numberOfGuesses = allowedGuessPerGame;
 let savedScoresArray = [];
 
 //Event Listeners
+
+//Random number generation
 document.addEventListener("DOMContentLoaded", (e) => {
     targetNumber = getRandomInt(1, 100);
     console.log(targetNumber);
 })
 
+//Hides the check button and shows the try again button
 tryAgainButton.addEventListener("click", (e) => {
     e.preventDefault();
     checkButton.hidden = false;
@@ -25,7 +28,7 @@ tryAgainButton.addEventListener("click", (e) => {
     resetGame();
 })
 
-
+//Input field validation and guesses
 checkButton.addEventListener("click", (e) => {
     e.preventDefault();
     resultElement.textContent ="";
@@ -84,7 +87,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
   
-
+//Game hints
 function updateHint(guess, value) {
     if (guess < value) {
         hintControl.textContent = "Hint : Higher";
@@ -95,7 +98,9 @@ function updateHint(guess, value) {
     inputElement.value = "";
 }
 
+//Game reset
 function resetGame() {
+   
     numberOfGuesses = allowedGuessPerGame;
     resultElement.textContent = "";
     hintControl.textContent = "";
@@ -106,8 +111,9 @@ function resetGame() {
     console.log(targetNumber);
 }
 
+//Score update
 function updateScores(score) {
-
+    
     if (savedScoresArray.length >= 5) {
         savedScoresArray.pop();
     }
@@ -119,10 +125,16 @@ function updateScores(score) {
     savedScoresArray.forEach(function(item) {       
         let listItem = document.createElement('li');
         listItem.textContent = item;
+        if (item ==1) {
+            listItem.textContent += " guess";
+        } else { 
+            listItem.textContent += " guesses"
+        }
         triesLast.appendChild(listItem);
     })
 }
 
+//Clear guess input field
 function clearGuessField () {
     inputElement.value = "";
 }
