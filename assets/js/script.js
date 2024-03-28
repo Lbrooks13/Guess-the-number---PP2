@@ -58,7 +58,7 @@ checkButton.addEventListener("click", (e) => {
         updateHint(guess, targetNumber);
     }
     else if (numberOfGuesses ===1 && guess !== targetNumber) {
-        alert("Better luck next time!");
+        alert(`Better luck next time! The correct number was: ${targetNumber} `);
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
     }
