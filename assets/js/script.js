@@ -31,16 +31,19 @@ checkButton.addEventListener("click", (e) => {
 
     if (!inputElement.value) {
         alert("Please enter a number.");
+        clearGuessField();
         return;
     }
 
     if (inputElement.value > 100) {
         alert("Please enter a number equal to or lower than 100.");
+        clearGuessField();
         return;
     }
 
     if (inputElement.value <= 0) {
         alert("Please enter a number equal to or higher than 1.");
+        clearGuessField();
         return;
     }
 
@@ -117,4 +120,8 @@ function updateScores(score) {
         listItem.textContent = item;
         triesLast.appendChild(listItem);
     })
+}
+
+function clearGuessField () {
+    inputElement.value = "";
 }
