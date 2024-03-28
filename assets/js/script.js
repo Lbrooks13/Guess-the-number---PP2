@@ -33,7 +33,7 @@ tryAgainButton.addEventListener("click", (e) => {
 checkButton.addEventListener("click", (e) => {
     e.preventDefault();
     resultElement.textContent ="";
-
+    
     if (!inputElement.value) {
         alert("Please enter a number.");
         clearGuessField();
