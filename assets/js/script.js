@@ -1,3 +1,4 @@
+// --Game variables--
 const checkButton = document.querySelector(".submit");
 const inputElement = document.querySelector(".guess");
 const hintControl = document.querySelector(".hint");
@@ -12,7 +13,7 @@ let targetNumber;
 let numberOfGuesses = allowedGuessPerGame;
 let savedScoresArray = [];
 
-//Event Listeners
+// --Event Listeners--
 
 //Random number generation
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -79,7 +80,7 @@ checkButton.addEventListener("click", (e) => {
 })
 
 
-// Functions
+// --Functions--
 
 function getRandomInt(min, max) {
     const minCeiled = Math.ceil(min);
@@ -95,7 +96,7 @@ function updateHint(guess, value) {
     else {
         hintControl.textContent = "Hint : Lower";
     }
-    inputElement.value = "";
+    clearGuessField();
 }
 
 //Game reset
@@ -107,7 +108,7 @@ function resetGame() {
     remainingValue.textContent = "";
     targetNumber = getRandomInt(1, 100);
     allGuesses.textContent = "";
-    inputElement.value = "";
+    clearGuessField();
     console.log(targetNumber);
 }
 
@@ -138,3 +139,5 @@ function updateScores(score) {
 function clearGuessField () {
     inputElement.value = "";
 }
+
+//Please note : The winning number is logged to the console for testing purposes upon each refresh.

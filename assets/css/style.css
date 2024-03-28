@@ -8,6 +8,7 @@ body {
     font-family: sans-serif;
 }
 
+/* Game input field */
 .guess-the-number {
     height: 30em;
     min-width: 21em;
@@ -52,6 +53,7 @@ body {
     justify-content: center;
 }
 
+/*Guess input area*/
 input {
     width: 25%;
     height: 1.8em;
@@ -62,6 +64,7 @@ input {
     border: 1px solid black;
 }
 
+/*check/try again button */
 button {
     width: 25%;
     color: white;
@@ -72,6 +75,7 @@ button {
     cursor: pointer;
 }
 
+/*High score area */
 .leader {
     height: 30em;
     min-width: 21em;
@@ -99,6 +103,7 @@ button {
     padding-left: 0px;
 }
 
+/*Responsive code*/
 @media only screen and (max-width: 768px) {
     body {
         width: 95%;
