@@ -35,8 +35,12 @@ checkButton.addEventListener("click", (e) => {
     }
 
     if (inputElement.value > 100) {
-        alert("Please enter a number lower than 100.");
+        alert("Please enter a number equal to or lower than 100.");
         return;
+    }
+
+    if (inputElement.value < 0) {
+        alert("Please enter a number equal to or higher than 1.")
     }
 
     const guess = parseInt(inputElement.value, 10);
