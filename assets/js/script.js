@@ -39,7 +39,7 @@ checkButton.addEventListener("click", (e) => {
         return;
     }
 
-    if (inputElement.value < 0) {
+    if (inputElement.value <= 0) {
         alert("Please enter a number equal to or higher than 1.");
     }
 
