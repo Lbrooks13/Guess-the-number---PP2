@@ -6,9 +6,10 @@ const remainingValue = document.querySelector(".rem-val");
 const allGuesses = document.querySelector(".all");
 const tryAgainButton = document.querySelector(".reset");
 const triesLast = document.getElementById("leaderboard");
+const allowedGuessPerGame = 4;
 
 let targetNumber;
-let numberOfGuesses = 5;
+let numberOfGuesses = allowedGuessPerGame;
 let savedScoresArray = [];
 
 //Event Listeners
@@ -95,7 +96,7 @@ function updateHint(guess, value) {
 }
 
 function resetGame() {
-    numberOfGuesses = 5;
+    numberOfGuesses = allowedGuessPerGame;
     resultElement.textContent = "";
     hintControl.textContent = "";
     remainingValue.textContent = "";
