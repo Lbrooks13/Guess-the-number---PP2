@@ -69,10 +69,11 @@ button {
     width: 25%;
     color: white;
     font-size: 1.4em;
-    background: #5f5a4d;
+    background: #5f5a4d; 
     border: 0;
     border-radius: 5px;
     cursor: pointer;
+    padding:10px;
 }
 
 /*High score area */

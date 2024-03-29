@@ -54,7 +54,7 @@ checkButton.addEventListener("click", (e) => {
 
     const guess = parseInt(inputElement.value, 10);
 
-    if (allGuesses.textContent.includes(inputElement.value)) {
+    if (allGuesses.textContent.includes === (inputElement.value)) {
         alert("You cannot use the same number twice.")
         return;
     }
