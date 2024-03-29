@@ -15,7 +15,7 @@ let savedScoresArray = [];
 
 // --Event Listeners--
 
-//Random number generation
+//Random number generation & log of correct number to console
 document.addEventListener("DOMContentLoaded", (e) => {
     targetNumber = getRandomInt(1, 100);
     console.log(targetNumber);
@@ -35,19 +35,19 @@ checkButton.addEventListener("click", (e) => {
     resultElement.textContent ="";
     
     if (!inputElement.value) {
-        alert("Please enter a number.");
+        alert("Please Enter A Number.");
         clearGuessField();
         return;
     }
 
     if (inputElement.value > 100) {
-        alert("Please enter a number equal to or lower than 100.");
+        alert("Please Enter A Number Equal To Or Lower Than 100.");
         clearGuessField();
         return;
     }
 
     if (inputElement.value <= 0) {
-        alert("Please enter a number equal to or higher than 1.");
+        alert("Please Enter A Number Equal To Or Higher Than 1.");
         clearGuessField();
         return;
     }
@@ -55,7 +55,7 @@ checkButton.addEventListener("click", (e) => {
     const guess = parseInt(inputElement.value, 10);
 
     if (allGuesses.textContent.includes === (inputElement.value)) {
-        alert("You cannot use the same number twice.")
+        alert("You Have Already Used This Number. Please Select A New Number.")
         return;
     }
 
@@ -63,12 +63,12 @@ checkButton.addEventListener("click", (e) => {
         updateHint(guess, targetNumber);
     }
     else if (numberOfGuesses ===1 && guess !== targetNumber) {
-        alert(`Better luck next time! The correct number was: ${targetNumber} `);
+        alert(`Better Luck Next Time! The Correct Number Was: ${targetNumber} `);
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
     }
     else if (guess === targetNumber) {
-        resultElement.textContent = alert("Awesome! Well done!");
+        resultElement.textContent = alert("Awesome! Well Done!");
         tryAgainButton.hidden = false;
         checkButton.hidden = true;
         updateScores(5 - numberOfGuesses);
@@ -127,9 +127,9 @@ function updateScores(score) {
         let listItem = document.createElement('li');
         listItem.textContent = item;
         if (item ==1) {
-            listItem.textContent += " guess";
+            listItem.textContent += " Guess";
         } else { 
-            listItem.textContent += " guesses"
+            listItem.textContent += " Guesses"
         }
         triesLast.appendChild(listItem);
     })
