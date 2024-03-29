@@ -2,6 +2,8 @@
 
 Guess the number is a fun guessing game where you try to out-smart the computer. The computer will randomly pick a number between 1 and 100 and it's your job to guess what it's thinking. Don't worry! It'll help you along the way with hints, and if you're successful you can log your score!
 
+This is a fun, interactive game for all ages that provides engaging gameplay for all ages!
+
 
 ![Am i responsive](https://i.ibb.co/Cz46D0t/pp2-responsive-scrnsht.png)
 
