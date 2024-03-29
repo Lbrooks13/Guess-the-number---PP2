@@ -9,11 +9,14 @@ Guess the number is a fun guessing game where you try to out-smart the computer.
 ## Features -
 - Number Input - Here the user can input their guess. The app will then log this and move onto the next feature.
 - Hints - The game will log which numbers you have entered to prevent you from using up a try on an already used number.
+
 ![hint](https://i.ibb.co/bRvYvhJ/pp2-hint.png)
 - Remaining Guesses - The game counts down how many remaining tries you have.
 - Duplicate Numbers - The game keeps track of which numbers you have used (as mentioned above) but will also not allow you to enter a duplicate number. If this happens, a pop-up will warn you and the game will not deduct a try from you.
 - Your Score - When you correctly guess the number, the game will log the score for you on the leader-board.
+
 ![score](https://i.ibb.co/sqt5JXR/pp2-score.png)
+
 ![success](https://i.ibb.co/DVVQ5Yh/pp2-sucess.png)
 
 ## Testing -
