@@ -1,4 +1,4 @@
-// --Game variables--
+// --Constant Game Variables --
 const checkButton = document.querySelector(".submit");
 const inputElement = document.querySelector(".guess");
 const hintControl = document.querySelector(".hint");
@@ -9,17 +9,18 @@ const tryAgainButton = document.querySelector(".reset");
 const triesLast = document.getElementById("leaderboard");
 const allowedGuessPerGame = 4;
 
+// -- Variables --
 let targetNumber;
 let numberOfGuesses = allowedGuessPerGame;
 let savedScoresArray = [];
 
-// --Event Listeners--
+// -- Event Listeners --
 
 //Random number generation & log of correct number to console
 document.addEventListener("DOMContentLoaded", (e) => {
     targetNumber = getRandomInt(1, 100);
     console.log(targetNumber);
-})
+});
 
 //Hides the check button and shows the try again button
 tryAgainButton.addEventListener("click", (e) => {
@@ -27,7 +28,7 @@ tryAgainButton.addEventListener("click", (e) => {
     checkButton.hidden = false;
     tryAgainButton.hidden = true;
     resetGame();
-})
+});
 
 //Input field validation and guesses
 checkButton.addEventListener("click", (e) => {
@@ -55,7 +56,7 @@ checkButton.addEventListener("click", (e) => {
     const guess = parseInt(inputElement.value, 10);
 
     if (allGuesses.textContent.includes === (inputElement.value)) {
-        alert("You Have Already Used This Number. Please Select A New Number.")
+        alert("You Have Already Used This Number. Please Select A New Number.");
         return;
     }
 
@@ -77,10 +78,10 @@ checkButton.addEventListener("click", (e) => {
     numberOfGuesses--;
     remainingValue.textContent = numberOfGuesses;
     allGuesses.textContent += guess + ", ";
-})
+});
 
 
-// --Functions--
+// -- Functions --
 
 function getRandomInt(min, max) {
     const minCeiled = Math.ceil(min);
@@ -129,10 +130,10 @@ function updateScores(score) {
         if (item ==1) {
             listItem.textContent += " Guess";
         } else { 
-            listItem.textContent += " Guesses"
+            listItem.textContent += " Guesses";
         }
         triesLast.appendChild(listItem);
-    })
+    });
 }
 
 //Clear guess input field

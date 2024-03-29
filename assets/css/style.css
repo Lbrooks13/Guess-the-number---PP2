@@ -116,12 +116,12 @@ button {
     .leader {
         margin-top: 10px;
         width: 90%;
+        margin-left: 0;
     }
 
     .guess-the-number {
         width: 90%;
         text-align: center;
-
     }
 }
 
@@ -139,10 +139,29 @@ button {
 
     .leader {
        width: 320px;
-        
+       margin-left: 0;
     }
 
     .guess-the-number {
         margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 418px) {
+    .rule {
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .leader {
+        width: 320px;
+        margin-left: 0;
     }
 }
